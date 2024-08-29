@@ -4,7 +4,8 @@ import pandas as pd
 from PIL import Image
 import torch
 import torchvision.transforms as transforms
-from vision_language_model import VisionLanguageModel
+
+from .vision_language_model import VisionLanguageModel
 
 text_path = "../input.txt"
 with open(text_path, 'r', encoding='utf-8') as f:
