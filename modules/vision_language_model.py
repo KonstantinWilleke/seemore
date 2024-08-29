@@ -1,7 +1,7 @@
 from torch import nn
 
-from . decoder_language_model import DecoderLanguageModel
-from . vision_transformer import ViT
+from .decoder_language_model import DecoderLanguageModel
+from .vision_transformer import ViT
 
 class VisionLanguageModel(nn.Module):
     def __init__(self, n_embd, image_embed_dim, vocab_size, n_layer, img_size, patch_size, num_heads, num_blks, emb_dropout, blk_dropout):
