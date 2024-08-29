@@ -12,7 +12,7 @@ current_dir = os.path.dirname(__file__)
 
 text_path = "../input.txt"
 filename = os.path.join(current_dir, text_path)
-with open(text_path, "r", encoding="utf-8") as f:
+with open(filename, "r", encoding="utf-8") as f:
     text = f.read()
 
 # Constants
@@ -145,7 +145,7 @@ def estimate_loss(model, df, split, img_size=96, val_batch_size=8):
 
 
 def main():
-    input_path = "..images/inputs.csv"
+    input_path = "../images/inputs.csv"
     filename = os.path.join(current_dir, input_path)
     df = pd.read_csv(filename)
     df = pd.concat([df] * 30)[["b64string_images", "caption"]]
