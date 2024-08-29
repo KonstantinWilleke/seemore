@@ -6,6 +6,10 @@ import torch
 import torchvision.transforms as transforms
 from vision_language_model import VisionLanguageModel
 
+text_path = "../input.txt"
+with open(text_path, 'r', encoding='utf-8') as f:
+    text = f.read()
+
 # Constants
 batch_size = 16
 block_size = 32
@@ -99,7 +103,7 @@ def estimate_loss(model, df, split, img_size=96, val_batch_size=8):
     return sum(losses) / len(losses)
 
 def main():
-    df = pd.read_csv("./inputs.csv")
+    df = pd.read_csv("..images/inputs.csv")
     df = pd.concat([df] * 30)[['b64string_images', 'caption']]
 
     model = VisionLanguageModel(n_embd, image_embed_dim, vocab_size, n_layer, img_size, patch_size, n_head, num_blks, emb_dropout, blk_dropout)
